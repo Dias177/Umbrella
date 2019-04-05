@@ -13,7 +13,10 @@ import SwiftyJSON
 
 class ViewController: UIViewController, CLLocationManagerDelegate {
     
+  
     @IBOutlet weak var cityLabel: UILabel!
+    @IBOutlet weak var notificationLabel: UILabel!
+    @IBOutlet weak var infoLabel: UILabel!
     
     private let locationManager = CLLocationManager()
     
@@ -24,6 +27,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
         locationManager.requestAlwaysAuthorization()
         locationManager.startUpdatingLocation()
+        
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -47,35 +51,43 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             if response.result.isSuccess {
                 let weatherJSON : JSON = JSON(response.result.value!)
                 
-                self.forecastRain(json: weatherJSON)
+                self.updateUI(json: weatherJSON)
             } else {
-                self.cityLabel.text = "Connection Issues"
+                self.notificationLabel.text = "Connection Issues"
             }
         }
     }
     
-    func forecastRain(json: JSON) {
+    func updateUI(json: JSON) {
         var ifRain = false
+        var hour = -1
         
-        for i in 0...8 {
+        let city = json["city"]["name"].stringValue
+        cityLabel.text = city
+        
+        for i in 0...4 {
             let weather = json["list"][i]["weather"][0]["main"]
-
+            
             if weather == "Rain" {
                 ifRain = true
+                hour = i
                 break
             }
         }
         
         if ifRain {
-            cityLabel.text = "Bring your umbrella"
+            notificationLabel.text = "Bring your umbrella"
+            infoLabel.text = hour == 0 ? "It is currently raining" : "It will rain in \(hour) hours"
+           
         } else {
-            cityLabel.text = "Do not bring your umbrella"
+            notificationLabel.text = "Do not bring your umbrella"
+            infoLabel.text = "It will not rain for the next 12 hours"
         }
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print(error)
-        cityLabel.text = "Location unavailable"
+        notificationLabel.text = "Location unavailable"
     }
 
 
