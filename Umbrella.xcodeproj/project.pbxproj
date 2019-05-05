@@ -14,6 +14,7 @@
 		0B62C459224E800900B25DE4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B62C457224E800900B25DE4 /* LaunchScreen.storyboard */; };
 		0B8C20F7225387B600CDAE5D /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8C20F6225387B600CDAE5D /* API.swift */; };
 		0B98B94C0301C5508A215276 /* Pods_Umbrella.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 736F4CD88949180E1ED41C36 /* Pods_Umbrella.framework */; };
+		0BE381B0227EDA5B002201A7 /* SetIntervalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE381AF227EDA5B002201A7 /* SetIntervalViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		0B62C458224E800900B25DE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0B62C45A224E800900B25DE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B8C20F6225387B600CDAE5D /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		0BE381AF227EDA5B002201A7 /* SetIntervalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetIntervalViewController.swift; sourceTree = "<group>"; };
 		62C6D917E3411F07E589F776 /* Pods-Umbrella.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Umbrella.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Umbrella/Pods-Umbrella.debug.xcconfig"; sourceTree = "<group>"; };
 		6CA2DE78EC84556DF65543D7 /* Pods-Umbrella.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Umbrella.release.xcconfig"; path = "Pods/Target Support Files/Pods-Umbrella/Pods-Umbrella.release.xcconfig"; sourceTree = "<group>"; };
 		736F4CD88949180E1ED41C36 /* Pods_Umbrella.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Umbrella.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,6 +72,7 @@
 				0B62C457224E800900B25DE4 /* LaunchScreen.storyboard */,
 				0B62C45A224E800900B25DE4 /* Info.plist */,
 				0B8C20F6225387B600CDAE5D /* API.swift */,
+				0BE381AF227EDA5B002201A7 /* SetIntervalViewController.swift */,
 			);
 			path = Umbrella;
 			sourceTree = "<group>";
@@ -215,6 +218,7 @@
 			files = (
 				0B62C451224E800800B25DE4 /* ViewController.swift in Sources */,
 				0B8C20F7225387B600CDAE5D /* API.swift in Sources */,
+				0BE381B0227EDA5B002201A7 /* SetIntervalViewController.swift in Sources */,
 				0B62C44F224E800800B25DE4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -18,6 +18,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var notificationLabel: UILabel!
     @IBOutlet weak var infoLabel: UILabel!
     
+    var time : Double = 4
+    
+    
+    
     private let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
@@ -65,7 +69,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         let city = json["city"]["name"].stringValue
         cityLabel.text = city
         
-        for i in 0...4 {
+        let interval = Int((time/3).rounded(.up))
+        
+        for i in 0...interval {
             let weather = json["list"][i]["weather"][0]["main"]
             
             if weather == "Rain" {
@@ -81,7 +87,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
            
         } else {
             notificationLabel.text = "Do not bring your umbrella"
-            infoLabel.text = "It will not rain for the next 12 hours"
+            infoLabel.text = "It will not rain for the next \(Int(time)) hours"
         }
     }
     
@@ -90,6 +96,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         notificationLabel.text = "Location unavailable"
     }
 
-
+ 
+    @IBAction func reset(_ sender: Any) {
+        performSegue(withIdentifier: "reset", sender: self)
+    }
+    
 }
 
