@@ -1,1 +1,1 @@
-# Umbrella notifies when you should bring your umbrella 
+# Umbrella notifies you when an umbrella is needed
